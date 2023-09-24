@@ -3,13 +3,12 @@
 provides customizable templates for bug bounty reports. It's designed to simplify the reporting process, letting users focus on identifying vulnerabilities. Frontend in VueJS, Backend in FastAPI. 
 
 
-<img src="https://github.com/PatrikFehrenbach/writedown/assets/9072595/14858946-4391-4f5b-be5f-e8b01b3fb8b8" width="200" alt="bug">
+<img src="[https://github.com/PatrikFehrenbach/writedown/assets/9072595/14858946-4391-4f5b-be5f-e8b01b3fb8b8](https://github.com/PatrikFehrenbach/BugBountyBlueprint/assets/9072595/c8645f1c-e258-4aaa-8058-c405a4990aec)" width="200" alt="bug">
 
 
 🌹 This tool was highly inspired by [Frans Rosen's template-generator](https://github.com/fransr/template-generator).
 
-<img width="2056" alt="Screenshot 2023-09-24 at 13 19 07" src="https://github.com/PatrikFehrenbach/writedown/assets/9072595/6e6aeaf7-583e-4fb1-9377-918195cd4a55">
-
+<img width="2056" alt="Screenshot 2023-09-24 at 13 19 07" src="https://github.com/PatrikFehrenbach/BugBountyBlueprint/assets/9072595/5119f976-c1fe-4649-aa39-a2a7f3f03bff">
 
 
 ## Features
