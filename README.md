@@ -78,7 +78,10 @@ Visit `http://localhost:8080` in your browser to access **Bug Bounty Blueprint**
 
 ## Demo 
 
-https://github.com/PatrikFehrenbach/writedown/assets/9072595/e0f0e579-404e-44f0-9b38-5be023394a3a
+
+
+https://github.com/PatrikFehrenbach/BugBountyBlueprint/assets/9072595/23c1caa9-763b-45cb-acb6-af5fd798ad0f
+
 
 
 ## Contribute 🤝
