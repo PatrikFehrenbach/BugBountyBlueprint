@@ -13,10 +13,15 @@ class MarkdownTemplate(BaseModel):
     name: str
     content: str
 
-
 class ProcessMarkdownRequest(BaseModel):
     template_name: str
     params: Dict[str, str]
+
+def get_secure_path(base_path: str, user_input: str) -> str:
+    result_path = os.path.abspath(os.path.join(base_path, user_input))
+    if not result_path.startswith(base_path):
+        raise HTTPException(status_code=400, detail="Invalid file name")
+    return result_path
 
 @app.get("/templates/")
 def list_templates():
@@ -24,7 +29,7 @@ def list_templates():
 
 @app.get("/template/{template_name}")
 def get_template(template_name: str):
-    file_path = os.path.join(TEMPLATE_PATH, template_name)
+    file_path = get_secure_path(TEMPLATE_PATH, template_name)
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Template not found")
     with open(file_path, 'r') as f:
@@ -32,22 +37,19 @@ def get_template(template_name: str):
 
 @app.post("/process_markdown/")
 def process_markdown(request: ProcessMarkdownRequest):
-    file_path = os.path.join(TEMPLATE_PATH, request.template_name)
+    file_path = get_secure_path(TEMPLATE_PATH, request.template_name)
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Template not found")
     with open(file_path, 'r') as f:
         template = f.read()
-
     for key, value in request.params.items():
-        placeholder = f"{{{{{key}}}}}"  
+        placeholder = f"{{{{{key}}}}}"
         template = template.replace(placeholder, value)
-
     return {"markdown": template}
-
 
 @app.post("/template/")
 def create_template(template: MarkdownTemplate):
-    file_path = os.path.join(TEMPLATE_PATH, template.name)
+    file_path = get_secure_path(TEMPLATE_PATH, template.name)
     if os.path.exists(file_path):
         raise HTTPException(status_code=400, detail="Template already exists")
     with open(file_path, 'w') as f:
@@ -56,7 +58,7 @@ def create_template(template: MarkdownTemplate):
 
 @app.put("/template/{template_name}")
 def update_template(template_name: str, template: MarkdownTemplate):
-    file_path = os.path.join(TEMPLATE_PATH, template_name)
+    file_path = get_secure_path(TEMPLATE_PATH, template_name)
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Template not found")
     with open(file_path, 'w') as f:
@@ -65,12 +67,11 @@ def update_template(template_name: str, template: MarkdownTemplate):
 
 @app.delete("/template/{template_name}")
 def delete_template(template_name: str):
-    file_path = os.path.join(TEMPLATE_PATH, template_name)
+    file_path = get_secure_path(TEMPLATE_PATH, template_name)
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Template not found")
     os.remove(file_path)
     return {"message": "Template deleted successfully"}
-
 
 app.add_middleware(
     CORSMiddleware,
