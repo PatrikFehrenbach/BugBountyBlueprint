@@ -3,7 +3,7 @@
 provides customizable templates for bug bounty reports. It's designed to simplify the reporting process, letting users focus on identifying vulnerabilities. Frontend in VueJS, Backend in FastAPI. 
 
 
-<img src="[https://github.com/PatrikFehrenbach/writedown/assets/9072595/14858946-4391-4f5b-be5f-e8b01b3fb8b8](https://github.com/PatrikFehrenbach/BugBountyBlueprint/assets/9072595/c8645f1c-e258-4aaa-8058-c405a4990aec)" width="200" alt="bug">
+<img src="[https://github.com/PatrikFehrenbach/BugBountyBlueprint/assets/9072595/c8645f1c-e258-4aaa-8058-c405a4990aec]" width="200" alt="bug">
 
 
 🌹 This tool was highly inspired by [Frans Rosen's template-generator](https://github.com/fransr/template-generator).
