@@ -45,8 +45,9 @@ provides customizable templates for bug bounty reports. It's designed to simplif
    cd BugBountyBlueprint
    ```
 
-3. Install dependencies:
+3. Install backend dependencies:
    ```bash
+   cd backend
    pip install -r requirements.txt
    ```
 
