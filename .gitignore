@@ -2,6 +2,14 @@
 **/node_modules
 **/dist
 
+# python
+.venv
+env/
+venv/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
 # local env files
 .env.local
