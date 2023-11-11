@@ -10,7 +10,7 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
-    "axios": "^1.5.0",
+    "axios": "^1.6.0",
     "core-js": "^3.8.3",
     "marked": "^9.0.3",
     "postcss": "^8.4.31",
